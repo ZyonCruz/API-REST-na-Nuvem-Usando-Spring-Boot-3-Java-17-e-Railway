@@ -1,27 +1,17 @@
 spring:
   datasource:
-    # Configuração para o banco de dados H2 em memória, ideal para desenvolvimento.
-    # O "testdb" no URL é o nome do banco de dados em memória.
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
-    username: sa # Usuário padrão do H2
-    password: "" # Senha vazia para o H2
+    username: sa
+    password: "00"
   jpa:
-    # Define o dialeto do Hibernate para H2, otimizando a geração de SQL.
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      # Estratégia de DDL (Data Definition Language) do Hibernate.
-      # 'update': O Hibernate vai criar ou atualizar as tabelas do banco de dados com base nas suas entidades.
-      # Ideal para desenvolvimento, mas cuidado em produção (pode apagar dados!).
       ddl-auto: update
-    # Habilita a visualização das queries SQL geradas pelo Hibernate no console. Útil para depuração.
     show-sql: true
-    # Formata as queries SQL no console para melhor legibilidade.
     properties:
       hibernate.format_sql: true
   h2:
-    # Habilita o console web do H2, acessível via navegador.
-    # http://localhost:8080/h2-console
     console:
       enabled: true
-      path: /h2-console # O caminho para acessar o console
+      path: /h2-console
